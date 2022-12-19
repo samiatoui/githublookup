@@ -1,0 +1,15 @@
+.user-img img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+.user-bio p {
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 750px) {
+    .user-info {
+        text-align: center;
+        padding-top: 50px;
+    }
+}

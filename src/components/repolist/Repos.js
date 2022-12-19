@@ -19,7 +19,7 @@ export default function Repos() {
     }, [])
 
     return repos.map((repo) => (
-        <div>
+        <div className="repo-cont">
             <div className="repo-item" key={repo}>
                 <p>{repo.name}</p>
                 <div className="repo-btncont">

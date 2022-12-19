@@ -26,14 +26,19 @@ export default function UserInfo() {
             .catch(console.error)
     }, [])
 
-    
+
     return (
-        <div className='userInfo'>
-            <p>{name}</p>
-            <img src={img}></img>
-            <p>{bio}</p>
-            <p>{location}</p>
-            <p>{blog}</p>
+        <div className='user-info'>
+            <div className='user-img'>
+                <img src={img}></img>
+            </div>
+            <h2>{name}</h2>
+            <div className='user-bio'>
+                <p>{bio}</p>
+                <p>{location}</p>
+                <a href={blog}>LinkedIn</a>
+            </div>
+
         </div>
     )
 }
