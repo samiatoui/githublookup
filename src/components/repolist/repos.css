@@ -2,8 +2,8 @@
     background-color: red;
     max-width: 240px;
     padding: 5px 25px;
-    margin: 0 5px 5px 5px;
-    min-height: 225px;
+    margin: 0 5px 10px 5px;
+    min-height: 250px;
     border-radius: 10px;
 
 }
@@ -13,7 +13,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-left:25px;
 }
 
 .repo-btncont{
@@ -30,7 +29,7 @@
 
 @media only screen and (max-width: 750px) {
     .repo-item{
-        max-width: 150px;
+        max-width: 160px;
     }
     .repo-main{
         margin-top: 50px;

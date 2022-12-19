@@ -1,6 +1,6 @@
 .user-img img {
     width: 250px;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .user-bio p {
@@ -11,5 +11,11 @@
     .user-info {
         text-align: center;
         padding-top: 50px;
+    }
+}
+@media only screen and (min-width: 760px) {
+    .user-info {
+        text-align: center;
+        padding-right: 25px;
     }
 }
