@@ -21,16 +21,15 @@ export default function Repos() {
     return repos.map((repo) => (
         <div>
             <div className="repo-item" key={repo}>
-               
-
+                <p>{repo.name}</p>
                 <div className="repo-btncont">
-                    <div className="repo-button"><a href={repo.html_url}> </a></div>
-
+                    <div className="repo-button"><a href={repo.html_url}>  BUTTON </a></div>
                     {
-                        repo.homepage !== "" && repo.homepage !== null ? (<div className="repo-button"><a href={repo.homepage} target="_blank"></a></div>) : <div className="repo-button"></div>
+                        repo.homepage !== "" && repo.homepage !== null ? (<div className="repo-button"><a href={repo.homepage} target="_blank">BUTTON</a>  </div>) : <div className="repo-button"></div>
                     }
                 </div>
                 <p>{repo.description}</p>
+
             </div>
         </div>
     ));

@@ -1,0 +1,31 @@
+.repo-main{
+    max-width: 600px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 5px 25px;
+    background-color: black;
+}
+
+.repo-item{
+    background-color: red;
+    max-width: 240px;
+    padding: 5px 25px;
+    overflow-wrap: break-word;
+    margin: 5px;
+
+}
+
+.repo-btncont{
+    display: flex;
+}
+
+.repo-btncont a{
+    text-decoration: none;
+}
+
+.repo-button{
+    padding-right: 5px;
+}
