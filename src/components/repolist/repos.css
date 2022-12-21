@@ -1,11 +1,10 @@
 .repo-item{
-    background-color: red;
     max-width: 240px;
     padding: 5px 25px;
     margin: 0 5px 10px 5px;
     min-height: 250px;
     border-radius: 10px;
-
+    box-shadow: var(--main-shadow);
 }
 
 .repo-main{
@@ -17,6 +16,16 @@
 
 .repo-btncont{
     display: flex;
+}
+
+.external-icon{
+    width: 20px;
+    height: auto;
+}
+
+.github-icon-repo{
+    width: 20px;
+    height: auto;
 }
 
 .repo-btncont a{

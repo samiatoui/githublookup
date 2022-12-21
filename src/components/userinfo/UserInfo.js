@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./userinfo.css"
+import GitHub from "./github.svg"
 
 export default function UserInfo() {
 
@@ -32,11 +33,12 @@ export default function UserInfo() {
             <div className='user-img'>
                 <img src={img}></img>
             </div>
-            <h2>{name}</h2>
+
             <div className='user-bio'>
+                <h2>{name}</h2>
                 <p>{bio}</p>
                 <p>{location}</p>
-                <a href={blog}>LinkedIn</a>
+                <a href={blog} target="_blank"><img src={GitHub} className="github-icon"></img></a>
             </div>
 
         </div>

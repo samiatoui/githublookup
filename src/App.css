@@ -10,7 +10,11 @@
 }
 
 .App{
-    background-color: grey;
+    --main-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+body{
+    --color-main: #DB073D;
+    --color-off: #31353d;
+}
 

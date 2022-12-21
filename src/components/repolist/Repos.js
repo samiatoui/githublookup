@@ -1,5 +1,7 @@
 import "./repos.css";
 import React, { useState, useEffect } from 'react';
+import GitHub from "../userinfo/github.svg";
+import External from "../repolist/external.svg";
 
 
 export default function Repos() {
@@ -21,11 +23,11 @@ export default function Repos() {
     return repos.map((repo) => (
         <div className="repo-cont">
             <div className="repo-item" key={repo}>
-                <p>{repo.name}</p>
+                <h2>{repo.name}</h2>
                 <div className="repo-btncont">
-                    <div className="repo-button"><a href={repo.html_url}>  BUTTON </a></div>
+                    <div className="repo-button"><a href={repo.html_url} target="_blank"><img src={GitHub} title="View on GitHub" className="github-icon-repo"></img></a></div>
                     {
-                        repo.homepage !== "" && repo.homepage !== null ? (<div className="repo-button"><a href={repo.homepage} target="_blank">BUTTON</a>  </div>) : <div className="repo-button"></div>
+                        repo.homepage !== "" && repo.homepage !== null ? (<div className="repo-button"><a href={repo.homepage} target="_blank"><img src={External} title="View Live Demo" className="external-icon"></img></a>  </div>) : <div className="repo-button"></div>
                     }
                 </div>
                 <p>{repo.description}</p>
