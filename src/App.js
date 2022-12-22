@@ -19,17 +19,18 @@ function App() {
   const [blog, setBlog] = useState('');
   const [location, setLocation] = useState('');
   const [bio, setBio] = useState('');
+  const [url, setURL] = useState('');
 
   const [repos, setRepo] = useState([]);
 
   const changeUser = async () => {
     const results = await fetch(`https://api.github.com/users/${username}`).then((response => response.json()));
-    console.log(results.name);
     setName(results.name);
     setImg(results.avatar_url);
     setBlog(results.blog);
     setLocation(results.location);
     setBio(results.bio);
+    setURL(results.html_url);
 
     const repoData = await fetch(`https://api.github.com/users/${username}/repos`);
     const json = await repoData.json();
@@ -63,7 +64,17 @@ function App() {
             <h2>{name}</h2>
             <p>{bio}</p>
             <p>{location}</p>
-            <a href={blog} target="_blank"><img src={GitHub} className="github-icon"></img></a>
+            <div className='btn-cont'>
+              {
+                blog !== "" && blog !== null ? (<a href={blog} target="_blank"><img src={GitHub} className="github-icon"></img></a>) : <p>Search for a user to populate!</p>
+              }
+
+              {
+                url !== "" && url !== null ? (<a href={url} target="_blank"><img src={GitHub} className="github-icon"></img></a>) : <a href="" className='empty-btn'></a>
+              }
+
+
+            </div>
           </div>
         </div>
         <div className="repo-main">
