@@ -4,9 +4,7 @@
         justify-content: center;
         margin: 0 auto;
         padding-top: 50px;
-
     }
-
 }
 
 .App{
@@ -18,3 +16,97 @@ body{
     --color-off: #31353d;
 }
 
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.user-img img {
+    width: 250px;
+    border-radius: 50%;
+    box-shadow: var(--main-shadow);
+}
+
+.user-bio h2{
+    margin: 0;
+}
+
+.github-icon{
+    width:25px
+}
+
+.user-bio {
+    box-shadow: var(--main-shadow);
+    padding: 25px 10px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+@media only screen and (max-width: 750px) {
+    .user-info {
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .user-bio{
+        margin: 0 auto;
+        max-width: 85%;
+        margin-top: 25px;
+
+    }
+}
+
+@media only screen and (min-width: 760px) {
+    .user-info {
+        text-align: center;
+        padding-right: 25px;
+    }
+}
+
+.repo-item{
+    max-width: 240px;
+    padding: 5px 25px;
+    margin: 0 5px 10px 5px;
+    min-height: 250px;
+    border-radius: 10px;
+    box-shadow: var(--main-shadow);
+}
+
+.repo-main{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.repo-btncont{
+    display: flex;
+}
+
+.external-icon{
+    width: 20px;
+    height: auto;
+}
+
+.github-icon-repo{
+    width: 20px;
+    height: auto;
+}
+
+.repo-btncont a{
+    text-decoration: none;
+}
+
+.repo-button{
+    padding-right: 5px;
+}
+
+@media only screen and (max-width: 750px) {
+    .repo-item{
+        max-width: 160px;
+    }
+    .repo-main{
+        margin-top: 50px;
+    }
+}
