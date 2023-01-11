@@ -20,8 +20,28 @@ body{
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    align-items: center;
+    height: 25px;
+}
+.form button{
+    border-radius: 5px;  
+    width: 50px; 
+    height: 40px;  
+    font-size: 18px;
+    border-width: 0px;
+    
 }
 
+input{
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 5px 10px;
+    height: 40px;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    width: 250px;
+}
 .user-img img {
     width: 250px;
     border-radius: 50%;
