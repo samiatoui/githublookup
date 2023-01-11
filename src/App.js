@@ -13,7 +13,6 @@ function App() {
 
   }
 
-
   const [name, setName] = useState('');
   const [img, setImg] = useState();
   const [blog, setBlog] = useState('');
@@ -42,24 +41,22 @@ function App() {
   return (
     <div>
 
-
       <div className='form'>
+        <h2>github.com/</h2>
         <input
           type="text"
+          value={username}
           onChange={getInput}>
         </input>
-        <button onClick={changeUser}>Search</button>
+        <button onClick={changeUser} disabled={!username}>🔎</button>
       </div>
+
       <div className="App">
-
-
-
 
         <div className='user-info'>
           <div className='user-img'>
             <img src={img}></img>
           </div>
-
           <div className='user-bio'>
             <h2>{name}</h2>
             <p>{bio}</p>
@@ -72,11 +69,10 @@ function App() {
               {
                 url !== "" && url !== null ? (<a href={url} target="_blank"><img src={GitHub} className="github-icon"></img></a>) : <a href="" className='empty-btn'></a>
               }
-
-
             </div>
           </div>
         </div>
+
         <div className="repo-main">
           {
             repos.map((repo) => (
