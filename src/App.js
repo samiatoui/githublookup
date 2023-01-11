@@ -19,21 +19,36 @@ function App() {
   const [location, setLocation] = useState('');
   const [bio, setBio] = useState('');
   const [url, setURL] = useState('');
-
+  const [httpStatusCode, setHttpStatusCode] = useState('');
   const [repos, setRepo] = useState([]);
 
   const changeUser = async () => {
-    const results = await fetch(`https://api.github.com/users/${username}`).then((response => response.json()));
-    setName(results.name);
-    setImg(results.avatar_url);
-    setBlog(results.blog);
-    setLocation(results.location);
-    setBio(results.bio);
-    setURL(results.html_url);
+    const results = await fetch(`https://api.github.com/users/${username}`)
+      .then((response) =>{ 
+        if (response.ok){
+          return response.json(),
+          setHttpStatusCode("good");
+        }
+        throw new Error("invalid entry"),
+        setHttpStatusCode("bad");
+      })
+      .then((responseJson) =>{
+        setName(results.name);
+        setImg(results.avatar_url);
+        setBlog(results.blog);
+        setLocation(results.location);
+        setBio(results.bio);
+        setURL(results.html_url);
+      })
+      .catch((error) =>{
+        console.log(error);
+      });
 
-    const repoData = await fetch(`https://api.github.com/users/${username}/repos`);
-    const json = await repoData.json();
-    setRepo(json);
+      const repoData = await fetch(`https://api.github.com/users/${username}/repos`);
+      const json = await repoData.json();
+      setRepo(json);
+   
+    console.log(httpStatusCode);
   }
 
 
@@ -51,7 +66,7 @@ function App() {
         <button onClick={changeUser} disabled={!username}>🔎</button>
       </div>
 
-      <div className="App">
+      {httpStatusCode === "bad" ? (<h1 className='error-msg'>Please enter a valid username</h1>) : <div className="App">
 
         <div className='user-info'>
           <div className='user-img'>
@@ -90,8 +105,8 @@ function App() {
               </div>
             ))}
         </div>
-
       </div>
+      }
     </div>
   )
 }
